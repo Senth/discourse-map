@@ -38,5 +38,4 @@ def main():
     users = get_all_users()
     update_sheet(users)
 
-
 main()

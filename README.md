@@ -21,6 +21,7 @@ There are quite a few steps to install this script.
     `admin --> Users --> click on the user --> scroll to Permissions section, API Key, press Generate`.
     1. Update `API_KEY` to the Discourse API key you got.
 1. Create a new Google Spreadsheet.
+    1. Write `Name` in `A1`, `Location` in `B1`, and `Avatar` in `C1`.
     1. Update `SHEET_ID` in `config.py` to your sheet id. You can find
     the sheet's id in the url, it's the part between `spreadsheets/d/` and `/edit#gid=99999`.
     1. **If** you changed the sheet name, be sure to update the `SHEET_NAME` as well.
@@ -36,8 +37,20 @@ There are quite a few steps to install this script.
     1. Click `OK`.
     1. Download the `client_secret.json` by clicking on the download icon furthest to the right.
     1. Save the `client_secret.json` file (with that exact name) in the same directory as `config.py`
-1. Run the script by being in the `discourse-map` directory, run it with this command: `python -m discoursemap`
+1. Run the script by being in the `discourse-map` directory (with a `-`), run it with this command: `python -m discoursemap`
     1. You will now see a link to authorize this script to access your Google Spreadsheets.
-    Copy the link to your browser and authorize this script. The next time you won't get this message if you followed
-    the correct steps.
+    Copy the link to your browser and authorize this script.
+    1. Run the script again (to update the spreadsheet).
+1. Create a map in [Zeemaps.com].
+    1. Click `Map my Spreadsheet`.
+    1. Select `Google Drive` and click `Fetch My Spreadsheets`.
+    1. Select the spreadsheet you created earlier.
+    1. Under `Basic`
+        1. Select `Default country` to the appropriate country.
+        1. Select `City` to `Location`.
+        1. Check all three checkboxes.
+        1. (optional) Select `Default color` to your choice.
+    1. Under `Media`.
+        1. Select `Photo URL` to `Avatar`.
+    1. Click `Submit`.
 1. Done :)

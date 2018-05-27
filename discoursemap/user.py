@@ -8,6 +8,7 @@ class User:
         self.id = id
         self.username = username
         self.name = name
+        self.avatar = None
         self.location = None
         self.active = None
 
@@ -38,3 +39,8 @@ class User:
             self.active = False
         else:
             self.active = True
+
+        avatar = user.get('avatar_template', None)
+        # Change '{size}' to 120
+        if avatar:
+            self.avatar = avatar.replace('{size}', '120')

@@ -24,9 +24,11 @@ def get_all_users():
 def update_sheet(users):
     # Remove suspended users
     if not Config.SHOW_SUSPENDED:
-        for key, user in users:
-            if not user.active:
-                users.pop(key)
+        users_old = users
+        users = dict()
+        for user in users_old.values():
+            if user.active:
+                users.setdefault(user.id, user)
 
     sheet = Sheet()
     sheet.update_users(Config.SHEET_NAME, users)

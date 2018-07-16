@@ -1,9 +1,9 @@
 import logging
 
-from .config import Config
-from .api import Api
-from .user import User
-from .sheet import Sheet
+from discoursemap.config import Config
+from discoursemap.api import Api
+from discoursemap.user import User
+from discoursemap.sheet import Sheet
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())

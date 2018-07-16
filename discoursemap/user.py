@@ -1,7 +1,7 @@
 import logging
 from urllib.parse import urljoin
 
-from .config import Config
+from discoursemap.config import Config
 
 logger = logging.getLogger(__name__)
 

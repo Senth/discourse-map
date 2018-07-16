@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 WAIT_TIME_ON_TOO_MANY_REQUESTS = 10
 
+
 class Api:
     def __init__(self, url, username, key):
         self.url = url
@@ -70,7 +71,7 @@ class Api:
         if additional_parameters:
             parameters = {**parameters, **additional_parameters}
 
-        logger.debug('Full url: ' + full_url + ", parameters: " + str(parameters))
+        # logger.debug('Full url: ' + full_url + ", parameters: " + str(parameters))
 
         status = 429
         while status == 429:
@@ -81,8 +82,8 @@ class Api:
             )
             status = response.status
 
-            logger.debug('Response Status: ' + str(response.status))
-            logger.debug('Response Data: ' + str(response.data))
+            # logger.debug('Response Status: ' + str(response.status))
+            # logger.debug('Response Data: ' + str(response.data))
 
             # Too many requests, wait a few seconds before trying again
             if status == 429:

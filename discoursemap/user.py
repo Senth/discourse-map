@@ -1,4 +1,7 @@
 import logging
+from urllib.parse import urljoin
+
+from .config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -43,4 +46,4 @@ class User:
         avatar = user.get('avatar_template', None)
         # Change '{size}' to 120
         if avatar:
-            self.avatar = avatar.replace('{size}', '120')
+            self.avatar = urljoin(Config.SERVER_URL, avatar.replace('{size}', '120'))
